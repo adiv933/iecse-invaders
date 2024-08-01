@@ -52,7 +52,7 @@ window.onload = function () {
 
     //load images
     shipImg = new Image();
-    shipImg.src = "./logo.png";
+    shipImg.src = "./images/logo.png";
     shipImg.onload = function () {
         context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
     }
@@ -182,11 +182,11 @@ function createAliens() {
 
     alienImg = new Image();
     if (level === 1)
-        alienImg.src = "./alien-cyan.png";
+        alienImg.src = "./images/alien-cyan.png";
     else if (level === 2)
-        alienImg.src = "./alien-yellow.png";
+        alienImg.src = "./images/alien-yellow.png";
     else
-        alienImg.src = "./alien-magenta.png";
+        alienImg.src = "./images/alien-magenta.png";
 
     for (let c = 0; c < alienColumns; c++) {
         for (let r = 0; r < alienRows; r++) {
@@ -227,9 +227,11 @@ function shoot(e) {
 function playBulletSound() {
     const bulletSound = new Audio('./sound/bullet.mp3');
     bulletSound.volume = 0.5;
-    bulletSound.play();
-}
 
+    bulletSound.play().catch(error => {
+        console.log("Audio play error:", error);
+    });
+}
 
 function detectCollision(a, b) {
     const collision = a.x < b.x + b.width &&   // a's top left corner doesn't reach b's top right corner
@@ -282,8 +284,8 @@ function shootBullets() {
             height: tileSize / 2,
             used: false
         };
-        bulletArray.push(bullet);
         playBulletSound();
+        bulletArray.push(bullet);
         lastShotTime = currentTime;
     }
 }

@@ -32,8 +32,8 @@ let alienX = tileSize;
 let alienY = tileSize;
 let alienImg;
 
-let alienRows = 6;
-let alienColumns = 6;
+let alienRows = 4;
+let alienColumns = 5;
 let alienCount = 0; //number of aliens to defeat
 let alienVelocityX = 1; //alien moving speed
 

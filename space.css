@@ -29,15 +29,15 @@ body {
 
 @media (max-width: 600px) {
     #board {
-        height: 500px;
-        width: 400px;
+        height: 400px;
+        width: 300px;
     }
 }
 
 @media (max-width: 300px) {
     #board {
-        height: 300px;
-        width: 200px;
+        height: 200px;
+        width: 150px;
     }
 }
 

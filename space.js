@@ -140,9 +140,9 @@ function update() {
             alienColumns = Math.min(alienColumns + 1, columns / 2 - 2); // Cap at 16/2 -2 = 6
             alienRows = Math.min(alienRows + 1, rows - 4);  // Cap at 16-4 = 12
             if (alienVelocityX > 0) {
-                alienVelocityX += 1; // Increase the alien movement speed towards the right
+                alienVelocityX += 0.5; // Increase the alien movement speed towards the right
             } else {
-                alienVelocityX -= 1; // Increase the alien movement speed towards the left
+                alienVelocityX -= 0.5; // Increase the alien movement speed towards the left
             }
             level++; // Move to the next level
             alienArray = [];
@@ -245,7 +245,7 @@ let touchStartX = 0;
 let touchEndX = 0;
 let isFiring = false;
 let lastShotTime = 0;
-const firingRate = 100; // Firing rate in milliseconds 
+const firingRate = 90; // Firing rate in milliseconds 
 
 function handleTouchStart(e) {
     touchStartX = e.touches[0].clientX;

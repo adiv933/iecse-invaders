@@ -150,8 +150,11 @@ function update() {
             createAliens();
         } else {
             // All levels completed
-            window.alert("WIN");
             gameOver = true; // Optionally end the game or reset
+            window.alert("YOU WIN!!! Press ok to go to Whatsapp group");
+            window.location.href = 'https://chat.whatsapp.com/JhRFqsTQbJ1BBJubgalTXJ';
+
+
         }
     }
 
